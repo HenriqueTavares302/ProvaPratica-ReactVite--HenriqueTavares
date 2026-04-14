@@ -1,18 +1,45 @@
-# React + Vite
+# Sistema Acadêmico — Lista de Alunos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação React com Vite para gerenciamento de lista de alunos.
 
-Currently, two official plugins are available:
+## Estrutura do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+lista-alunos/
+├── index.html
+├── package.json
+├── vite.config.js
+└── src/
+    ├── main.jsx              ← Entrada da aplicação
+    ├── App.jsx               ← Componente principal (useState + useEffect)
+    ├── index.css             ← Estilos globais
+    ├── assets/
+    │   └── educacao.svg      ← Imagem de educação
+    └── components/
+        ├── StatusBar.jsx     ← Barra de status com props
+        ├── Footer.jsx        ← Rodapé com nome e ano
+        ├── AlunoCard.jsx     ← Card de cada aluno (usado no .map())
+        └── AlunoForm.jsx     ← Formulário para adicionar aluno
+```
 
-## React Compiler
+## Como executar
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+npm install
+npm run dev
+```
 
-Note: This will impact Vite dev & build performances.
+Acesse: http://localhost:5173
 
-## Expanding the ESLint configuration
+## Requisitos atendidos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Requisito       | Implementação                                          |
+|-----------------|--------------------------------------------------------|
+| StatusBar       | `<StatusBar mensagem="Sistema Acadêmico" />`           |
+| Footer          | Nome do aluno + ano via props                          |
+| Imagem          | SVG de educação em `src/assets/educacao.svg`           |
+| useState        | Estado `alunos` com `nome` e `curso`                   |
+| map             | `alunos.map(aluno => <AlunoCard ... />)` em App.jsx    |
+| useEffect       | Console ao montar e ao atualizar a lista               |
+| Interação       | Botão "Adicionar Aluno" abre formulário                |
+| Organização     | Componentes separados em `src/components/`             |
