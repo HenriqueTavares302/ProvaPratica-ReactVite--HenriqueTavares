@@ -24,7 +24,7 @@ lista-alunos/
 
 ## Como executar
 
-```bash
+ Acesse a pasta no terminal ou gitbash : cd vite-project
 npm install
 npm run dev
 ```
